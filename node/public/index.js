@@ -2,9 +2,10 @@ let engineSelect = document.getElementById("engine-select");
 let modeSelect = document.getElementById("mode-select");
 let maxNumber = document.getElementById("max-number");
 let submitButton = document.getElementById("submit-button");
-let resultP = document.getElementById('result')
+let resultP = document.getElementById("result");
 
 submitButton.addEventListener("click", (e) => {
+  resultP.innerText = `正在计算中，请等待...`;
   axios
     .post("/solve", {
       "engine-select": engineSelect.value,
@@ -13,10 +14,12 @@ submitButton.addEventListener("click", (e) => {
     })
     .then((res) => {
       console.log(res);
-      resultP.innerText = `计算结果：${res.data.answer}，花费时间：${parseFloat(res.data.time) / 1000} ms`
+      resultP.innerText = `计算结果：${res.data.answer}，花费时间：${
+        parseFloat(res.data.time) / 1000
+      } ms`;
     })
     .catch((err) => {
       console.err(err);
-      resultP.innerText = `出错啦：${JSON.stringify(err)}`
+      resultP.innerText = `出错啦：${JSON.stringify(err)}`;
     });
 });

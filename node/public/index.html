@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/antd@4.5.2/lib/index.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@4.5.2/dist/antd.min.css">
     <title>数学计算</title>
   </head>
 
@@ -112,16 +113,16 @@
         <div>
           <p>选择计算方式：</p>
           <select name="engine-select" id="engine-select">
-            <option value="javascript">javascript</option>
-            <option value="wasm">wasm</option>
+            <option value="javascript">javascript(Server)</option>
+            <option value="wasm">wasm(Server)</option>
           </select>
           <select name="mode-select" id="mode-select">
-            <option value="brute">brute</option>
-            <option value="optimized">optimized</option>
+            <option value="brute">brute--O(n^4)</option>
+            <option value="optimized">optimized--O(n^2)</option>
           </select>
         </div>
         <div>
-          <p>最大整数：</p>
+          <p>最大整数（建议数字不要太大）：</p>
           <input type="number" id="max-number" name="max-number" />
         </div>
         <button type="submit" id="submit-button" onclick="return false">
