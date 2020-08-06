@@ -13,13 +13,11 @@ submitButton.addEventListener("click", (e) => {
       "max-number": maxNumber.value === "" ? 2 : parseInt(maxNumber.value),
     })
     .then((res) => {
-      console.log(res);
       resultP.innerText = `计算结果：${res.data.answer}，花费时间：${
         parseFloat(res.data.time) / 1000
       } ms`;
     })
     .catch((err) => {
-      console.err(err);
       resultP.innerText = `出错啦：${JSON.stringify(err)}`;
     });
 });
