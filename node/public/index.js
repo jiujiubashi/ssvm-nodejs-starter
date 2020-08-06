@@ -8,7 +8,7 @@ submitButton.addEventListener("click", (e) => {
   resultP.innerText = `正在计算中，请等待...`;
   if (engineSelect.value === "javascript-client") {
     let startTick = new Date();
-    let result = compute_with_client(modeSelect, maxNumber);
+    let result = compute_with_client(modeSelect.value, maxNumber.value);
     let endTick = new Date();
 
     resultP.innerText = `计算结果：${result}，花费时间：${
