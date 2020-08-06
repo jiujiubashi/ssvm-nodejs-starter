@@ -18,7 +18,7 @@ body {
     margin: auto;
     background-color: white;
 }
-.title {
+#title {
     text-align: center;
     margin-top: 10px;
 }
