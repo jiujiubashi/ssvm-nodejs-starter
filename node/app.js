@@ -16,13 +16,18 @@ app.post('/solve', (req, res) => {
   let engine = req.body["engine-select"]
   let mode = req.body["mode-select"]
   let maxNumber = req.body["max-number"]
-  let result
+  let answer
+  let startTick = new Date()
   if (engine === "javascript") {
-    result = computeWithJS(mode, maxNumber)
+    answer = computeWithJS(mode, maxNumber)
   } else if (engine === "wasm") {
-    result = computeWithWasm(mode, maxNumber)
+    answer = computeWithWasm(mode, maxNumber)
   }
-  res.json(result)
+  let endTick = new Date()
+  res.json({
+    answer,
+    time: endTick - startTick
+  })
 })
 
 app.post('/test', (req, res) => {
