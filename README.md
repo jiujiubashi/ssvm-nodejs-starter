@@ -6,6 +6,7 @@
 ## use docker to run
 
 ```bash
+# or you can exec `./start.sh`
 docker run \
 -p 3000:3000 \
 --rm --it \
