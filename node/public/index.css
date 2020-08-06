@@ -1,3 +1,27 @@
 #submit-button {
     margin-top: 20px;
 }
+body {
+    position: relative;
+    background-color: aliceblue;
+}
+.container {
+    position: absolute;
+    border: orange 1px dashed;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 600px;
+    max-height: 400px;
+    margin: auto;
+    background-color: white;
+}
+.title {
+    text-align: center;
+    margin-top: 10px;
+}
+#compute-form, #result, #todo {
+    margin-left: 10px;
+}
