@@ -25,3 +25,7 @@ body {
 #compute-form, #result, #todo {
     margin-left: 10px;
 }
+#formula {
+    width: 25%;
+    height: auto;
+}
