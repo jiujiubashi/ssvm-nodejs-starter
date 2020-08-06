@@ -42,3 +42,9 @@ curl -H "Content-Type:application/json" -X POST http://0.0.0.0:3000/solve -d '{"
 ```
 
 You can also visit server by browser
+
+## 参考资料
+
+[学rust，免费拿树莓派](https://segmentfault.com/a/1190000023363546)
+
+[入门文档，在Node.js中调用rust函数](https://www.secondstate.io/articles/get-started-with-rust-functions-in-node-zh/)
