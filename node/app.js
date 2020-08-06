@@ -1,19 +1,32 @@
-const { say } = require('../pkg/ssvm_nodejs_starter_lib.js');
+const { computeWithJS, computeWithWasm } = require('./compute')
+const express = require('express')
 
-const http = require('http');
-const url = require('url');
 const hostname = '0.0.0.0';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-  const queryObject = url.parse(req.url,true).query;
-  if (!queryObject['name']) {
-    res.end(`Please use command curl http://${hostname}:${port}/?name=MyName \n`);
-  } else {
-    res.end(say(queryObject['name']) + '\n');
-  }
-});
+const app = express()
+app.use(express.static(__dirname + 'public'))
+app.use(express.json())
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.get('/', (req, res) => {
+  res.redirect('/index.html')
+})
+
+app.post('/solve', (req, res) => {
+  let engine = req.body["engine-select"]
+  let mode = req.body["mode-select"]
+  let maxNumber = req.body["max-number"]
+  let result
+  if (engine === "javascript") {
+    result = computeWithJS(mode, maxNumber)
+  } else if (engine === "wasm") {
+    result = computeWithWasm(mode, maxNumber)
+  }
+  res.json(result)
+})
+
+app.post('/test', (req, res) => {
+  console.log(req.body)
+  res.json(req.body)
+})
+app.listen(port, () => console.log(`Listening at http://${hostname}:${port} 🎊`))
