@@ -1,0 +1,26 @@
+{
+  "name": "ssvm-nodejs-starter",
+  "version": "1.0.0",
+  "description": "![Build and test](https://github.com/second-state/ssvm-nodejs-starter/workflows/Build%20and%20test/badge.svg)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node node/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiujiubashi/ssvm-nodejs-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiujiubashi/ssvm-nodejs-starter/issues"
+  },
+  "homepage": "https://github.com/jiujiubashi/ssvm-nodejs-starter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
